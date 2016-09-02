@@ -16,6 +16,7 @@ class Nave extends FlxSprite
 	{
 		super(X, Y, SimpleGraphic);
 		makeGraphic(32, 32);
+	
 	}
 	
 	override public function update(elapsed:Float):Void
@@ -28,17 +29,14 @@ class Nave extends FlxSprite
 		if(FlxG.keys.pressed.LEFT){
 			x -= 4;
 		}
-		if(FlxG.keys.pressed.UP){
-			y -= 4;
-		}
-		if(FlxG.keys.pressed.DOWN){
-			y += 4;
-		}
-		if (FlxG.keys.justPressed.X) {
-			var b:Bullet = new Bullet();
+		
+		if (FlxG.keys.justPressed.SPACE/* || b.alive() = false*/) {
+			var b:Bala = new Bala();
 			b.x = x + width;
 			b.y = y + height / 2;
-			
 			FlxG.state.add(b);
+			//b.alive() = true;
+		}
 	}
+
 }

@@ -15,15 +15,15 @@ class PlayState extends FlxState
 	override public function create():Void
 	{
 		super.create();
-		//FlxG.resizeWindow();
+		nave = new Nave();
+		nave.setPosition(80 - nave.width / 2, 144 - nave.height);
+		add(nave);
 		
-		nave = new Nave(100,300);
 	}
 
 	override public function update(elapsed:Float):Void
 	{
 		super.update(elapsed);
 		
-		add(nave);
 	}
 }
